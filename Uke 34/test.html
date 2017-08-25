@@ -2,9 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title></title>
+    <style>
+        image {
+            max-width: 900px;
+        }
+        body {
+            max-width: 1000px;
+        }
+        body    {
+            background-image: url("http://codezag.com/wp-content/uploads/2015/03/change-background-color-javascript.gif");
+        }
+        h1 {
+            font-size 500px;
+        }
+        title {
+            font-size 100px;
+        }
+
+    </style>
 </head>
 <body>
-HALLO
+
+<h1>Soundboard</h1>
+
+<audio src="../Uke%2033/poppin.mp3" id="poppin"></audio>
+<img id="bilde" src="https://i.ytimg.com/vi/s0SBjdkautM/hqdefault.jpg" alt="England is my city"    height="300"    width="300">
+
+<img id="england" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_map_of_England.svg/826px-Flag_map_of_England.svg.png" alt="my city"
+     width="300" height="300">
+<audio id="city" src="../Uke%2033/city.mp3"></audio>
+
+<img id="hitler" src="http://www.nattogdag.no/wp-content/uploads/2017/04/Adolf_Hitler_45.jpg" alt="Hitler"  height="300"    width="300">
+<audio id="siegheil" src="../Uke%2033/siegheil.mp3" ></audio>
+
+<img id="stalin" src="../Uke%2033/main-qimg-8c1dd435a746f9f09cde818a5279e005-c.jpg" alt="USSR STALIN" height="300" width="300">
+<audio id="ussr" src="../Uke%2033/ussr%20sound.mp3"></audio>
+
+<img id="purrp" src="http://lyricallemonade.com/wp-content/uploads/Screen-Shot-2017-04-02-at-10.02.58-PM.png" alt="purrp"   width="300" height="300">
+<audio id="lean" src="../Uke%2033/purrp.mp3"></audio>
+
+<img id="trump" src="https://i1.wp.com/www.watcherofweasels.org/wp-content/uploads/2016/08/Donald-Trump-1.jpg?resize=300%2C300" alt="trump"    width="300" height="300">
+<audio id="china" src="../Uke%2033/Trump%20says%20CHINA.mp3"></audio>
+
+<img id="jesuschrist" src="../Uke%2033/my%20nigga.JPG" alt="Jesus christ is my nigga" height="300" width="300">
+<audio id=niggga" src=Jesus%20Christ%20is%20my%20Nigga.mp3"></audio>
+
+<script>
+
+    let bilde = document.getElementById("bilde");
+    let poppin = document.getElementById("poppin");
+
+    bilde.onclick = function() {
+        poppin.play();
+    }
+
+
+    let Hitler = document.getElementById("hitler");
+    let siegheil = document.getElementById("siegheil");
+
+    Hitler.onclick  = function () {
+        siegheil.play();
+    }
+
+    let stalin = document.getElementById("stalin");
+    let ussr = document.getElementById("ussr");
+    stalin.onclick = function () {
+        ussr.play();
+    }
+    let purrp = document.getElementById("purrp");
+    let lean = document.getElementById("lean");
+    purrp.onclick = function () {
+        lean.play();
+    }
+    let england = document.getElementById("england");
+    let city = document.getElementById("city");
+    england.onclick = function () {
+        city.play();
+    }
+
+    let trump = document.getElementById("trump");
+    let china = document.getElementById("china");
+    trump.onclick = function () {
+        china.play();
+    }
+
+    let jesuschrist = document.getElementById("jesuschrist");
+    let niggga = document.getElementById("niggga");
+    jesuschrist.onclick = function () {
+        niggga.play();
+    }
+
+</script>
+
 </body>
+
 </html>
