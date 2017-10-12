@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html    {
+            font-size: 16px;
+        }
+        body    {
+            font-family: 'Roboto', sans-serif;
+            color: darkslateblue;
+            font-weight: 300;
+        }
+        main    {
+            display: grid;
+            grid-template-columns: 1fr  1fr 1fr;
+            grid-gap: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            main    {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main    {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        img {
+            width:100%;
+            border-collapse: collapse;
+
+        }
+        table   {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead   {
+            background-color: #f9f9f9;
+            border-top: 4px solid   #ff912f;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+        }
+        tbody   tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        th, td {
+            padding: .5rem  .625rem;
+            border-right: 1px solid #D60000;
+        }
+        th:last-child, td:last-child    {
+            border: none;
+        }
+        tr  {
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<article>
+    <h1>Kvadratrøtter</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Tall</th>
+            <th>2. rot</th>
+            <th>3.rot</th>
+            <th>4. rot</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>100</td>
+            <td>10</td>
+            <td>4,641</td>
+            <td>3,162</td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>1000</td>
+            <td>31,622</td>
+            <td>10</td>
+            <td>5,623</td>
+
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2686</td>
+            <td>51,826</td>
+            <td>13,900</td>
+            <td> 7,199 </td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3,14</td>
+            <td>1,772</td>
+            <td>1,464</td>
+            <td>1,331</td>
+
+        </tr>
+        </tbody>
+
+    </table>
+</article>
+
+<article>
+    <h1>Fjell</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Fjell</th>
+            <th>meter over havet</th>
+            <th>hvor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Gallhøpiggen</td>
+            <td>2686m</td>
+            <td>Norge</td>
+
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Mount Everest</td>
+            <td>8848m</td>
+            <td>Nepal, Tibet(kina)</td>
+
+
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Olympus Mons</td>
+            <td>21300m</td>
+            <td>Mars</td>
+
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Himmelbjerget</td>
+            <td>147m</td>
+            <td>Danmark</td>
+
+
+        </tr>
+        </tbody>
+
+    </table>
+</article>
+
+<article>
+    <h1>Sanger</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Sang</th>
+            <th>Artist</th>
+            <th>Sjanger</th>
+            <th>Utgivelses år</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Africa</td>
+            <td>Toto</td>
+            <td>Klassisk rock</td>
+            <td>1982</td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Look at me!</td>
+            <td>XXXTentacion</td>
+            <td>Trap</td>
+            <td>2016</td>
+
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sandstorm</td>
+            <td>Darude</td>
+            <td>Tekno edm</td>
+            <td>2001</td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Can't help falling in love</td>
+            <td>Elvis Presley</td>
+            <td>Pop</td>
+            <td>1961</td>
+
+        </tr>
+        </tbody>
+
+    </table>
+</article>
+</body>
+</html>
