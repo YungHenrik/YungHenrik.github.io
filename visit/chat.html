@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visit Sandvika</title>
+    <style>
+
+        *   {
+            margin: 0;
+        }
+
+        a   {
+            font-size: 22px;
+            padding: 80px;
+            color: white;
+            text-align: center;
+        }
+        a:hover {
+            color: red;
+        }
+        nav {
+            background-color: deepskyblue;
+            text-align: center  ;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            font-family: "Open sans", Helvetica, Arial, sans-serif;
+            padding: 22px 12px 22px 12px;
+            font-size: 18px;
+            text-decoration: none;;
+        }
+        nav a:hover {
+            color: red;
+        }
+        .active {
+            color: white;
+            border-bottom: 4px solid lightcoral;
+        }
+
+        body {
+            background-color: white;
+            background-size: cover;
+        }
+
+
+        h1   {
+            text-align: center;
+            font-family: "Passion One", Helvetica, sans-serif;
+            font-size: 3rem;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: move steps(30) 2s infinite;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: black;
+
+        }
+        p   {
+            text-align: center;
+            font-family: Helvetica, sans-serif;
+            font-size: 1rem;
+            color: black;
+            max-width: 500px;
+            margin: auto;
+        }
+        h2  {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        b   {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: red;
+            font-size: 3rem;
+        }
+
+
+        main {
+            overflow: hidden;
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 100vh;
+        }
+        .slides {
+            width: 500%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            transition: 1s;
+            position: absolute;
+            top: 200px;
+        }
+        .slides > div {
+            text-align: center;
+        }
+        .slides > div > img {
+            width: 65%;
+        }
+
+        #burger {
+            display: flex;
+            width: 16px;
+            height: 16px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 5px;
+
+
+        }
+        #burger >   div {
+            background-color: white;
+            height: 2px;
+            transition: 0.6s;
+        }
+        #meny   {
+            position: absolute;
+            width: 500px;
+            background-color: lightcoral;
+            top: 69px;
+            left: -2500px;
+            min-height: calc(100vh - 69px);
+            transition: 0.8s;
+            z-index: 1;
+            max-width: 500px;
+
+
+
+        }
+        #cb {
+            display: none;
+        }
+        #cb:checked ~ #meny {
+            left: 0;
+        }
+        #cb:checked ~   #burger >   div:first-child {
+            transform: translateY(7px) rotate(45deg);
+        }
+        #cb:checked ~   #burger >   div:last-child {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        #cb:checked ~   #burger >   div:nth-child(2) {
+            opacity: 0;
+        }
+
+        footer  {
+            background-color: lightgray;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        h3  {
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+
+        }
+
+        footer  >   a   > img   {
+            height: 50px;
+        }
+        main    > div   {
+            max-width: 200px;
+            overflow: scroll;
+            text-align: center;
+
+        }
+
+        input   {
+            position: relative;
+            top: 200px;
+
+        }
+
+        main    >   article > div   {
+            position: absolute;
+            top: 230px;
+            text-align: center;
+        }
+        
+        body    {
+            background-image: url("Savin-NY-Website-Background-Web-1.jpg");
+        }
+        #meny > div > form {
+
+            position: absolute;
+            left: 0px;
+            float: left;
+        }
+
+        #meny > div > form > input[type=text]{
+            width: 500px;
+            padding: 12px 20px;
+            margin: 0x 26px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size:16px;
+
+        }
+        #meny > div > form > button {
+            background-color: deepskyblue;
+            color: white;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            margin: 0;
+            margin-top: 60px;
+            border: none;
+            cursor: pointer;
+            width: 500px;
+            font-size:20px;
+
+        }
+        #meny > div > form > button:hover {
+            opacity: 0.8;
+        }
+
+        #a  {
+            position: absolute;
+            left: 0;
+            top: 220px;
+        }
+
+        #b  {
+            position: absolute;
+            left: 0;
+
+        }
+
+
+
+        @media (max-width: 800px) {
+            main    {
+                height: auto;
+            }
+            h1  {
+                font-size: 2rem;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: black;
+
+            }
+            p   {
+
+            }
+
+            footer  {
+                min-height: 90px;
+            }
+
+            footer > a  > img    {
+                height: 40px;
+            }
+            h3  {
+                font-size: 20px;
+                -webkit-text-stroke-width: .3px;
+            }
+
+            #meny   {
+                width: 250px;
+                max-width: 250px;
+            }
+            #a  {
+                width: 50%;
+            }
+
+            #b  {
+                width: 250px;
+            }
+
+            #meny > div > form > input[type=text]{
+                width: 250px;
+            }
+            #c  {
+                max-width: 250px;
+            }
+        }
+
+
+        footer > a {
+            padding: 0;
+        }
+
+        #minMelding {
+            text-align: center;
+        }
+        article {
+            text-align: center;
+        }
+
+        #alleMeldinger {
+            position: relative;
+            margin: auto;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<head>
+    <nav>
+        <input type="Checkbox" id="cb">
+        <label id="burger" for="cb">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <nav id="meny">
+            <div>
+                <form id="c" action="http://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+                    <input id="a" name="sandvika åpningstider" type="hidden" value="sandvika åpnningstider"><!--Value Will Be Your Website Name-->
+                    <input id="b" autocomplete="off" name="q" placeholder="Søk etter åpningstider" required="required" type="text">
+                    <button id="c" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <a href="Forsiden.html">Forsiden</a>
+        <a href="Sand.html">Om Sandvika</a>
+        <a href="Kart.html">Kart</a>
+        <a class="active" href=chat.html>Service</a>
+    </nav>
+
+
+
+
+</head>
+
+<main>
+
+    <h1>Har du noen spørsmål?</h1>
+    <p>Chatten er åpen fra 09:00 - 17:00, mandag - fredag. </p>
+
+    <article>
+
+        <input type="text" id="minMelding">
+        <div id="alleMeldinger"></div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA-XeB4MXjuNk79-VGQ_bgLNzuiIM1lhrw",
+                authDomain: "visitsandvika.firebaseapp.com",
+                databaseURL: "https://visitsandvika.firebaseio.com",
+                projectId: "visitsandvika",
+                storageBucket: "",
+                messagingSenderId: "240736978686"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <script>
+            let db = firebase.database();
+            let meldinger = db.ref("meldinger");
+
+            let minMelding = document.getElementById("minMelding")
+            let alleMeldinger = document.getElementById("alleMeldinger")
+
+            function lagreMelding() {
+                meldinger.push(minMelding.value);
+                minMelding.value = "";
+            }
+
+            function visMelding(snap) {
+                alleMeldinger.innerHTML += "<p>" + snap.val() + "</p>"
+            }
+
+            minMelding.onchange = lagreMelding;
+            meldinger.on("child_added", visMelding);
+        </script>
+    </article>
+
+</main>
+
+
+
+
+<footer>
+    <h3>Kommuniser med oss på sosiale medier:</h3>
+    <a href="https://www.instagram.com/explore/tags/sandvika/"><img src="https://instagram-brand.com/wp-content/uploads/2016/11/app-icon2.png"></a>
+    <a href="https://imgur.com/a/5QJT0"><img src="https://vignette.wikia.nocookie.net/thevoice/images/4/45/Snapchat_icon.png/revision/latest?cb=20170429221552"></a>
+    <a href="https://www.facebook.com/places/Ting-du-kan-gjore-i-Sandvika-Norway/110298822330916/?entry_point=www_redirect&is_city_guide=0"><img src="http://www.freeiconspng.com/uploads/facebook-icon-5.png"></a>
+</footer>
+
+
+
+
+</body>
+</html>
