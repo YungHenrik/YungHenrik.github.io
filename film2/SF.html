@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Filmguiden</title>
+    <style>
+
+        *   {
+            margin: 0;
+        }
+
+        a   {
+            font-size: 22px;
+            padding: 80px;
+            color: white;
+            text-align: center;
+        }
+        a:hover {
+            color: red;
+        }
+        nav {
+            background-color: lightgray;
+            text-align: center  ;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            font-family: "Open sans", Helvetica, Arial, sans-serif;
+            padding: 22px 12px 22px 12px;
+            font-size: 18px;
+            text-decoration: none;;
+        }
+        nav  a:hover {
+            color: red;
+        }
+        .active {
+            color: white;
+            border-bottom: 4px solid lightcoral;
+        }
+
+        body {
+            background-color: white;
+            background-size: cover;
+        }
+
+
+        h1   {
+            text-align: center;
+            font-family: "Passion One", Helvetica, sans-serif;
+            font-size: 500%;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: move steps(30) 2s infinite;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: black;
+
+        }
+        p   {
+            margin: auto;
+            font-family: Helvetica, sans-serif;
+            font-size: 1.5rem;
+            color: transparent;
+            max-width: 1000px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        h2  {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        b   {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: red;
+            font-size: 3rem;
+        }
+
+        }
+        main {
+            overflow: hidden;
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 100vh;
+        }
+        .slides {
+            width: 500%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            transition: 1s;
+            position: absolute;
+            top: 200px;
+        }
+        .slides > div {
+            text-align: center;
+        }
+        .slides > div > img {
+            width: 65%;
+        }
+        #burger {
+            display: flex;
+            width: 16px;
+            height: 16px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 5px;
+
+
+        }
+        #burger >   div {
+            background-color: white;
+            height: 2px;
+            transition: 0.6s;
+        }
+        #meny   {
+            position: absolute;
+            width: 250px;
+            background-color: lightcoral;
+            top: 69px;
+            left: -300px;
+            min-height: calc(100vh - 69px);
+            transition: 0.8s;
+            z-index: 1;
+            text-align: center;
+
+
+        }
+
+
+
+        #cb {
+            display: none;
+        }
+        #cb:checked ~ #meny {
+            left: 0;
+        }
+        #cb:checked ~   #burger >   div:first-child {
+            transform: translateY(7px) rotate(45deg);
+        }
+        #cb:checked ~   #burger >   div:last-child {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        #cb:checked ~   #burger >   div:nth-child(2) {
+            opacity: 0;
+        }
+
+        footer  {
+            background-color: lightgray;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        footer > a {
+            margin: 0;
+        }
+        h3  {
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+
+        }
+
+        footer  >   a   > img   {
+            height: 50px;
+        }
+        nav >   a  > img {
+            height: 40px;
+        }
+
+
+        body    {
+            background-image: url("https://wallpapercave.com/wp/njHhZgk.jpg");
+        }
+
+        }
+        #meny > a:hover {
+            color: red;
+        }
+
+        #meny > div > a   {
+            margin-left: 100px;
+        }
+
+        @media (max-width: 800px ){
+            h1  {
+                font-size: 500%;
+            }
+            p   {
+                padding: 50px;
+            }
+
+            footer  {
+                min-height: 90px;
+            }
+
+            footer > a  > img    {
+                height: 40px;
+            }
+            h3  {
+                font-size: 20px;
+                -webkit-text-stroke-width: .3px;
+            }
+        }
+
+        footer > a {
+            padding: 0;
+        }
+
+        .lmo    {
+            font-size: 10px;
+        }
+        .filmer {
+            margin-top: 100px;
+            display: flex;
+        }
+        .filmer > article   {
+            border: 2px solid red;
+            height: 200px;
+            flex: 1;
+            transition: 0.4s;
+            background-size: cover;
+            background-position: center ;
+        }
+        .filmer >   article:hover   {
+            flex: 2;
+            transform: scale(1.3);
+            opacity: 1;
+            z-index: 1000;
+        }
+        .filmer > article:nth-child(1)  {  background-image: url("http://thefederalist.com/wp-content/uploads/2017/07/Screen-Shot-2017-07-20-at-2.48.26-PM-998x661.png");  }
+        .filmer > article:nth-child(2)  {  background-image: url("https://cdn-images-1.medium.com/max/1013/1*Y1YsOwrkJkcxs65B8AEMQw.jpeg");  }
+        .filmer > article:nth-child(3)  {  background-image: url("http://www.dikult.no/wp-content/uploads/2017/10/covenant3.jpg");  }
+        .filmer > article:nth-child(4)  {  background-image: url("https://www.spettacolo.eu/wp-content/uploads/2018/04/Banner-696x390.jpg");  }
+        .filmer > article:nth-child(5)  {  background-image: url("https://in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/avengers-infinity-war-et00073462-02-04-2018-09-21-43.jpg");  }
+
+
+    </style>
+</head>
+<body>
+<head>
+    <nav>
+
+        <input type="Checkbox" id="cb">
+        <label id="burger" for="cb">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <nav id="meny">
+            <div><a href="KK.html">Action</a></div>
+            <div><a href="SS.html">Komedie</a></div>
+            <div><a href="KK.html">Romantisk</a></div>
+            <div><a href="MF.html">Dokumentarer</a></div>
+            <div><a href="ES.html">Barn</a></div>
+        </nav>
+        <a href="Forsiden.html"><img src="logo2.png" alt="Logo"></a>
+        <a class="active" href="Filmer.html">Filmer</a>
+        <a href="Serier.html">Serier</a>
+        <a href=chat.html>Chat</a>
+    </nav>
+
+
+
+</head>
+
+<main>
+
+    <h1>
+        Nye filmer
+    </h1>
+
+    <section class="filmer">
+        <article><a href="https://www.imdb.com/title/tt5013056/?ref_=fn_al_tt_1"></a></article>
+        <article><a href="https://www.imdb.com/title/tt5052448/?ref_=nv_sr_1"></a></article>
+        <article><a href="https://www.imdb.com/title/tt2316204/?ref_=nv_sr_1"></a></article>
+        <article><a href="https://www.imdb.com/title/tt4371680/?ref_=nv_sr_1"></a></article>
+        <article><a href="https://www.imdb.com/title/tt4154756/?ref_=nv_sr_1"></a></article>
+
+    </section>
+
+
+
+</main>
+
+<script>
+    let slides = document.querySelector(".slides");
+    let marg = 0;
+    function forover() {
+        if(marg > -400) {
+            marg = marg - 100;
+            slides.style.marginLeft =  marg + "%";
+        } else {
+            slides.animate([
+                {transform: "translateX(20px)"},
+                {transform: "translateX(0)"},
+                {transform: "translateX(15px)"},
+                {transform: "translateX(0)"}
+            ], {
+                duration: 200
+            });
+        }
+    }
+    function bakover() {
+        if(marg < 0) {
+            marg = marg + 100;
+            slides.style.marginLeft = marg + "%";
+        } else {
+            slides.animate([
+                {transform: "translateX(-20px)"},
+                {transform: "translateX(0)"},
+                {transform: "translateX(-15px)"},
+                {transform: "translateX(0)"}
+            ], {
+                duration: 200
+            });
+        }
+    }
+    document.onclick = function(klikk) {
+        if(klikk.clientX > innerWidth / 2) {
+            forover();
+        } else {
+            bakover();
+        }
+    }
+</script>
+
+<footer>
+    <p class="lmo">All rights reserved to Filmguiden ©</p>
+</footer>
+
+
+
+
+</body>
+</html>
